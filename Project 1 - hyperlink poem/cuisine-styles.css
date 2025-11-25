@@ -1,0 +1,373 @@
+@font-face {
+    font-family: 'Adeptly';
+    src: url('./assets/AdeptlyRegular-OVz6d.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Orator';
+    src: url('./assets/OratorStd.otf') format('opentype');
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: ivory;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 3vw;
+    font-family: "Orator", serif;
+}  
+
+.description {
+    text-align: center;
+    font-size: 1.7vw;
+    color: #024d60;
+    font-weight: normal;
+    margin: 0 10vw;
+    margin-top: -60vh;
+    position: absolute;
+    max-width: 75vw;
+    z-index: 2;
+}
+
+.image-container {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    max-width: 1200px; 
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.yellow-checks {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: auto;
+    z-index: 0;
+}
+
+.blue-paper {
+    position: absolute;
+    width: 78vw;
+    height: 79vh;
+    background-color: #c3e7f1;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%) rotate(-7deg);
+}
+
+.white-plate {
+    position: absolute;
+    top: 16vh;
+    left: 38%;
+    transform: translateX(-50%);
+    width: 67vw;
+    height: auto;
+    z-index: 1;
+}
+
+.chinese {
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    top: 35vh;
+    left: 25vw;
+    cursor: pointer;
+    transform: rotate(-5deg);
+    z-index: 6;
+    transition: all 0.2s ease;
+}
+
+.indian {
+    position: absolute;
+    width: 12vw;
+    height: auto;
+    top: 33vh;
+    left: 39vw;
+    cursor: pointer;
+    transform: rotate(3deg);
+    z-index: 8;
+    transition: all 0.2s ease;
+}
+
+.italian {
+    position: absolute;
+    width: 12vw;
+    height: auto;
+    top: 64vh;
+    left: 21vw;
+    cursor: pointer;
+    transform: rotate(-15deg);
+    z-index: 5;
+    transition: all 0.2s ease;
+}
+
+.mexican {
+    position: absolute;
+    width: 12vw;
+    height: auto;
+    top: 60vh;
+    left: 42vw;
+    cursor: pointer;
+    transform: rotate(10deg);
+    z-index: 7;
+    transition: all 0.2s ease;
+}
+
+.thai {
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    top: 79vh;
+    left: 32vw;
+    cursor: pointer;
+    transform: rotate(-7deg);
+    z-index: 6;
+    transition: all 0.2s ease;
+}
+
+.chinese:hover,
+.indian:hover,
+.italian:hover,
+.mexican:hover,
+.thai:hover {
+    transform: scale(1.35) rotate(0deg);
+    z-index: 20;
+}
+
+.nav {
+    position: absolute;
+    padding-top: 195vh; 
+    padding-bottom: 15vh;
+    text-align: center;
+    font-size: 2.7vw;
+    line-height: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8vh;
+    color: #024d60;
+    font-weight: normal;
+    z-index: 1;
+}
+
+.nav a {
+    display: block;
+    padding: 2vh 3vw;
+    color: #024d60;
+    text-decoration: none;
+    font-family: 'Orator';
+    font-weight: bold;
+    font-size: 1.3vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    transform: scale(1.25);
+    transition: all 0.2s ease;
+}
+
+.nav a:active {
+    text-decoration: none;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.page-1 {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    background: #024d60;
+    right: 12%;
+    top: 35%;
+    z-index: 15;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-1.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-header-1 {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    font-family: "Adeptly", sans-serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.page-content-1 {
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 9%;
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 3%;
+    font-family: "Orator", serif;
+}
+
+.page-2 {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    background: #20313a;
+    right: 12%;
+    top: 35%;
+    z-index: 15;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-2.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-header-2 {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    font-family: "Adeptly", sans-serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.page-content-2 {
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 9%;
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 3%;
+    font-family: "Orator", serif;
+}
+
+.page-3 {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    background: #4a8c93;
+    right: 12%;
+    top: 35%;
+    z-index: 15;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-3.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-header-3 {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    font-family: "Adeptly", sans-serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.page-content-3 {
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 9%;
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 3%;
+    font-family: "Orator", serif;
+}
+
+.page-4 {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    background: #519cab;
+    right: 12%;
+    top: 35%;
+    z-index: 15;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-4.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-header-4 {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    font-family: "Adeptly", sans-serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.page-content-4 {
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 9%;
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 3%;
+    font-family: "Orator", serif;
+}
+
+.page-5 {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    background: #c3e7f1;
+    right: 12%;
+    top: 35%;
+    z-index: 15;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-5.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-header-5 {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    font-family: "Adeptly", sans-serif;
+    font-size: 3vw;
+    color: black;
+}
+
+.page-content-5 {
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 9%;
+    font-size: 1vw;
+    color: black;
+    margin-bottom: 3%;
+    font-family: "Orator", serif;
+}
