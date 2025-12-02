@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'IvyPresto';
+    src: url('../assets/ivy-presto-display-thin.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+  font-family: 'Orator';
+  src: url('../assets/OratorStd.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Laine';
+    src: url('../assets/Laine.TTF') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Adeptly';
+    src: url('../assets/AdeptlyRegular-OVz6d.ttf') format('truetype');
+    font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-button {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  padding: 1vh 2vh;
+  color: white;
+  text-decoration: none;
+  font-family: 'Orator';
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.15);
+}
+
+.home-button a:active {
+    text-decoration: none;
+}
+
+@media (min-width: 769px) {
+  body {
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: 'orator';
+    font-size: 1vw;
+  }
+
+  .Tourist {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF2E2;
+    text-align: center;
+    background-color: #2A1623;
+  }
+
+  .tourist-title {
+    font-family: 'IvyPresto'; 
+    font-size: 6vw; 
+    color: #B68FA4;
+    margin-bottom: 20px;
+  }
+
+  .tourist-subtitle{
+    font-family: 'Orator';
+    font-weight: normal;
+    font-size: 2vw;
+    color: #AA4D68;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .intro h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #AA4D68;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+    color: #AA4D68;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .restaurants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .restaurant-card {
+    background: #FFF2E2;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+    .restaurant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .restaurant-info {
+    padding: 25px;
+  }
+
+  .restaurant-info h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #FFF2E2;
+    color: #471224;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .restaurant-info p {
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .rating {
+    color: #D2AF8A;
+    margin-bottom: 10px;
+  }
+
+  .details {
+    color: #ffffff;
+  }
+
+  .signature-dish {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-top: 15px;
+    color: black;
+  }
+
+  .local-note,
+  .insider-tip,
+  .local {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: 'orator';
+    font-size: 1vw;
+    background-color: white;
+  }
+
+  .local {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .local-title {
+    font-family: 'IvyPresto'; 
+    font-size: 6vw; 
+    color: #2A1623;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+  .local-subtitle{
+    font-family: 'Orator';
+    font-weight: normal;
+    font-size: 2vw;
+    color: #AA4D68;
+  }
+
+  .Tourist,
+  .intro {
+    display: none;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .restaurant-card {
+    background: white;
+    border-left: 4px solid #FFF2E2;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+ .restaurant-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; 
+  }
+
+  .restaurant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .restaurant-info h3 {
+    margin-top: 10px;
+    font-size: 2vw;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .restaurant-info p {
+    display: none;
+  }
+
+  .local-note {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 2vw;
+  }
+
+  .insider-tip {
+    background: #FFF2E2;
+    border-left: 3px solid #D2AF8A;
+    padding: 12px;
+    margin: 15px 0;
+    font-family: 'laine';
+    line-height: 34px;
+    font-size: 4vw;
+    color: #333;
+  }
+
+  .insider-tip strong {
+    color: #e67e22;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .badge,
+  .rating,
+  .details,
+  .signature-dish {
+    display: none;
+  }
+}
