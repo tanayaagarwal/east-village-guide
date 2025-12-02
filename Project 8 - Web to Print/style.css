@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'IvyPresto';
+    src: url('../assets/ivy-presto-display-thin.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+  font-family: 'Orator';
+  src: url('../assets/OratorStd.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Laine';
+    src: url('../assets/Laine.TTF') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Adeptly';
+    src: url('../assets/AdeptlyRegular-OVz6d.ttf') format('truetype');
+    font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-button {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  padding: 1vh 2vh;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Orator';
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.15);
+}
+
+.home-button a:active {
+    text-decoration: none;
+}
+
+body {
+  font-family: 'Orator';
+  background-color: white;
+  padding: 1vw;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-family: 'IvyPresto'; 
+  font-size: 6vw; 
+  color: #471224;
+}
+
+.print-title {
+  display: none;
+  font-family: 'IvyPresto'; 
+  font-size: 6vw; 
+  color: #471224;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  padding-top: 0.8vw;
+  padding-bottom: 2vw;
+  font-family: "Orator";
+  font-size: 2vw;
+  color: #AA4D68;
+}
+
+.controls {
+  background: white;
+  border: 5px solid #AA4D68;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+label {
+  color: #000000;
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+  display: block;
+}
+
+select, input[type="text"], input[type="color"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.2vw;
+}
+
+button {
+  font-family: 'Orator';
+  font-size: 1.2vw;
+  background: #B68FA4;
+  opacity: 50%;
+  color: black;
+  border: none;
+  padding: 10px 24px;
+  cursor: pointer;
+  margin-right: 1vw;
+  margin-top: 1.3vw;
+}
+
+.basket-page {
+  width: 800px;
+  height: 1040px;
+  background: #FFF2E2;
+  margin: 0 auto;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.basket-image {
+  position: absolute;
+  top: 0vw;
+  left: 0vw;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.basket-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3vw; /* slightly reduced gap */
+  align-items: flex-start;
+  padding: 80px 100px 120px 100px;
+}
+
+.note-card {
+  width: 260px;
+  background: var(--note-color);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: rotate(var(--rotation, 0deg));
+  height: auto;
+  min-height: fit-content;
+}
+
+.note-card h3 {
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #000000;
+}
+
+.delete-btn, .edit-btn {
+  cursor: pointer;
+}
+
+.delete-btn {
+  position: absolute;
+  top: -3px;
+  right: 4px;
+  width: 24px; 
+  height: 24px;
+  color: rgb(0, 0, 0);
+  border: none;
+  background: transparent;
+}
+
+.edit-btn {
+  margin-top: 1.2vw;
+  background: #000000;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.note-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* tighter spacing */
+}
+
+.checkbox-circle {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.current-items-preview {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f0f0f0;
+  border: 2px solid #4a8c93;
+}
+
+.current-items-preview h4 {
+  color: #4a8c93;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.current-items-preview ul {
+  list-style: none;
+  padding: 0;
+}
+
+.current-items-preview li {
+  padding: 5px 0;
+  color: #4a8c93;
+  font-size: 1.2vw;
+}
+
+@media print {
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title,
+  .subtitle,
+  .controls,
+  .delete-btn,
+  .edit-btn,
+  .empty-state {
+    display: none;
+  }
+
+    #basket {
+    print-color-adjust: exact;
+}
+}
