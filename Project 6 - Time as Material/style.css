@@ -1,0 +1,571 @@
+@font-face {
+    font-family: 'IvyPresto';
+    src: url('../assets/ivy-presto-display-thin.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+  font-family: 'Orator';
+  src: url('../assets/OratorStd.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Laine';
+    src: url('../assets/Laine.TTF') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Adeptly';
+    src: url('../assets/AdeptlyRegular-OVz6d.ttf') format('truetype');
+    font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-button {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  padding: 1vh 2vh;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Orator';
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.15);
+}
+
+.home-button a:active {
+    text-decoration: none;
+}
+
+body {
+  font-family: 'Orator', monospace;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4vw;
+}
+
+header h1 {
+  font-family: 'IvyPresto'; 
+  font-size: 5vw; 
+  color: #471224;
+  margin-bottom: 1vw;
+}
+
+header p {
+  font-family: "Orator";
+  font-size: 2vw;
+  color: #AA4D68;
+}
+
+.bars-container {
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.bar-card {
+  position: relative;
+  height: 30vw;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #2A1623;
+}
+
+.door {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7C152B 0%, #AA4D68 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw;
+  transition: transform 0.6s ease-in-out;
+  z-index: 10;
+  box-shadow: 0 0.5vw 2vw rgba(0,0,0,0.3);
+}
+
+.door h2 {
+  font-family: 'IvyPresto';
+  font-size: 2.5vw;
+  color: #D2AF8A;
+  margin-bottom: 2vw;
+}
+
+.bar-card:hover .door {
+  transform: translateX(-100%);
+}
+
+.bar-card.active .door {
+  transform: translateX(-100%);
+}
+
+.shaker {
+  position: absolute;
+  left: 2vw;
+  bottom: 8vw;
+  width: auto;
+  height: 7vw;
+  z-index: 5;
+}
+
+.bar-card:hover .shaker {
+  animation: slideGlassWithPauses 10s ease-in-out forwards;
+}
+
+.bar-card.active .shaker {
+  animation: slideGlassWithPauses 10s ease-in-out forwards;
+}
+
+.station {
+  position: absolute;
+  top: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.station-1 { left: 11vw; }
+.station-2 { left: 26vw; }
+.station-3 { left: 40vw; }
+.station-4 { left: 56vw; }
+.station-5 { left: 71vw; }
+
+.ingredient-image {
+  width: auto;
+  height: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6vw;
+  text-align: center;
+  padding: 0.8vw;
+  margin-bottom: 0.8vw;
+}
+
+.ingredient-label {
+  font-size: 0.9vw;
+  color: #FFF2E2;
+  text-align: center;
+  max-width: 8vw;
+  line-height: 1.3;
+}
+
+.bar-card:hover .station-1,
+.bar-card.active .station-1 {
+  animation: fadeInStation 0.2s ease forwards;
+  animation-delay: 1s;
+}
+
+.bar-card:hover .station-1 .ingredient-image,
+.bar-card.active .station-1 .ingredient-image {
+  animation: shakeIngredient 0.6s ease 3s; 
+  animation-delay: 1.2s;
+}
+
+.bar-card:hover .station-2,
+.bar-card.active .station-2 {
+  animation: fadeInStation 0.2s ease forwards;
+  animation-delay: 3s;
+}
+
+.bar-card:hover .station-2 .ingredient-image,
+.bar-card.active .station-2 .ingredient-image {
+  animation: shakeIngredient 0.6s ease 5s;
+  animation-delay: 3.2s;
+}
+
+.bar-card:hover .station-3,
+.bar-card.active .station-3 {
+  animation: fadeInStation 0.2s ease forwards;
+  animation-delay: 5s;
+}
+
+.bar-card:hover .station-3 .ingredient-image,
+.bar-card.active .station-3 .ingredient-image {
+  animation: shakeIngredient 0.6s ease 5.5s;
+  animation-delay: 5.2s;
+}
+
+.bar-card:hover .station-4,
+.bar-card.active .station-4 {
+  animation: fadeInStation 0.2s ease forwards;
+  animation-delay: 6.8s;
+}
+
+.bar-card:hover .station-4 .ingredient-image,
+.bar-card.active .station-4 .ingredient-image {
+  animation: shakeIngredient-1 0.6s ease 7.5s;
+  animation-delay: 7s;
+}
+
+.bar-card:hover .station-5,
+.bar-card.active .station-5 {
+  animation: fadeInStation 0.2s ease forwards;
+  animation-delay: 8s;
+}
+
+.bar-card:hover .station-5 .ingredient-image,
+.bar-card.active .station-5 .ingredient-image {
+  animation: shakeIngredient-2 0.9s ease 9.5s;
+  animation-delay: 8.2s;
+}
+
+.final-drink {
+  position: absolute;
+  left: 71vw;
+  bottom: 6vw;
+  width: auto;
+  height: 9vw;
+  opacity: 0;
+  z-index: 11;
+}
+
+.bar-card:hover .final-drink,
+.bar-card.active .final-drink {
+  animation: fadeInDrink 0.2s 9s forwards,
+             tada 1.2s 9s forwards;
+}
+
+
+@keyframes fadeInDrink {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.drink-name {
+  font-size: 1.5vw;
+  color: #FFF2E2;
+  position: absolute;
+  bottom: 2.8vw;
+  text-align: center;
+  opacity: 0;
+  z-index: 11;
+  transform: scale(0.8);
+}
+
+.bar-card:hover .drink-name,
+.bar-card.active .drink-name {
+  animation: fadeInDrinkName 0.3s 9s forwards, tada 1.2s 9s forwards;
+}
+
+@keyframes fadeInDrinkName {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.bar-info {
+  position: absolute;
+  bottom: 1.5vw;
+  left: 4vw;
+  right: 4vw;
+  opacity: 0;
+  z-index: 10;
+}
+
+.bar-card:hover .bar-info,
+.bar-card.active .bar-info {
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.bar-info h3 {
+  font-family: 'Adeptly', sans-serif;
+  font-size: 2vw;
+  color: #B68FA4;
+  margin-bottom: 0.5vw;
+}
+
+.bar-details {
+  font-size: 0.9vw;
+  color: #FFF2E2;
+}
+
+@keyframes slideGlassWithPauses {
+  0% {
+    left: 3vw;
+  }
+  10% {
+    left: 15vw;
+  }
+  20% {
+    left: 15vw;
+    opacity: 100%;
+  }
+  30% {
+    left: 29vw;
+    opacity: 100%;
+  }
+  40% {
+    left: 29vw;
+    opacity: 100%;
+  }
+  50% {
+    left: 45vw;
+    opacity: 100%;
+  }
+  60% {
+    left: 45vw;
+    opacity: 100%;
+  }
+  70% {
+    left: 58vw;
+    opacity: 100%;
+  }
+  80% {
+    left: 58vw;
+    opacity: 100%;
+  }
+  81% {
+    left: 58vw;
+    opacity: 0%;
+  }
+
+  100% {
+    left: 58vw;
+    opacity: 0%;
+  }
+}
+
+@keyframes fadeInStation {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5vw) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shakeIngredient {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  80% {
+    transform: translateY(0vw) rotate(110deg);
+  }
+}
+
+@keyframes shakeIngredient-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1vw) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-1vw) rotate(5deg);
+  }
+}
+
+@keyframes shakeIngredient-2 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  15% {
+    transform: translateY(1.5vw) rotate(-8deg);
+  }
+  30% {
+    transform: translateY(0) rotate(0deg);
+  }
+  45% {
+    transform: translateY(1.5vw) rotate(-8deg);
+  }
+  60% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(1.5vw) rotate(-8deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bars-container {
+    max-width: 80vw;
+  }
+
+  header h1 {
+    font-size: 3.5vw;
+  }
+
+  header p {
+    font-size: 1vw;
+  }
+
+  .bar-card {
+    height: 25vw;
+  }
+
+  .door h2 {
+    font-size: 2.5vw;
+  }
+
+  .bar-info h3 {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 1400px) {
+  .bars-container {
+    max-width: 95vw;
+  }
+
+  .bar-card {
+    height: 32vw;
+  }
+
+  header h1 {
+    font-size: 4.5vw;
+  }
+
+  .door h2 {
+    font-size: 3.2vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bar-card {
+    height: 35vw;
+  }
+
+  header h1 {
+    font-size: 5vw;
+  }
+
+  header p {
+    font-size: 1.4vw;
+  }
+
+  .door h2 {
+    font-size: 3.5vw;
+  }
+
+  .door-tagline {
+    font-size: 1.2vw;
+  }
+
+  .ingredient-image {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .ingredient-label {
+    font-size: 1vw;
+  }
+
+  .bar-info h3 {
+    font-size: 2.2vw;
+  }
+
+  .bar-details {
+    font-size: 1vw;
+  }
+}
+
+/* iPad (1180px and below) - Click activation */
+@media (max-width: 1180px) {
+  .ingredient-image {
+    height: 9vw;
+  }
+  
+  .shaker {
+    height: 8vw;
+  }
+  
+  .final-drink {
+    height: 10vw;
+  }
+}
+
+/* iPhone (393px and below) - Click activation with larger text and images */
+@media (max-width: 393px) {
+  .home-button {
+    font-size: 2.5vw;
+    padding: 0.8vh 1.5vh;
+  }
+  
+  header h1 {
+    font-size: 8vw;
+  }
+
+  header p {
+    font-size: 3.5vw;
+  }
+  
+  .bar-card {
+    height: 40vw;
+  }
+  
+  .door h2 {
+    font-size: 5vw;
+  }
+  
+  .ingredient-image {
+    height: 11vw;
+  }
+  
+  .ingredient-label {
+    font-size: 2vw;
+  }
+  
+  .shaker {
+    height: 9vw;
+  }
+  
+  .final-drink {
+    height: 12vw;
+  }
+  
+  .drink-name {
+    font-size: 3vw;
+  }
+  
+  .bar-info h3 {
+    font-size: 3.5vw;
+  }
+
+  .bar-details {
+    font-size: 2vw;
+  }
+}
